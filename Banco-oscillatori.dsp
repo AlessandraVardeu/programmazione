@@ -16,11 +16,11 @@ gain13= vslider("[14]amp13", 0. , 0. , 1. ,  0.01);
 gain14= vslider("[15]amp14", 0. , 0. , 1. ,  0.01);
 gain15= vslider("[16]amp15", 0. , 0. , 1. ,  0.01);
 gain16= vslider("[17]amp16", 0. , 0. , 1. ,  0.01);
-process = hgroup ("banco di oscillatori armonici",
-    os.osc(freq1) *(gain1),
+process = hgroup("banco di oscillatori armonici",
+    os.osc(freq*1) *(gain1),
     os.osc(freq*2) *(gain2),
     os.osc(freq*3) *(gain3),
-    os.osc(freq*4) *(gain4)
+    os.osc(freq*4) *(gain4),
     os.osc(freq*5) *(gain5),
     os.osc(freq*6) *(gain6),
     os.osc(freq*7) *(gain7),
