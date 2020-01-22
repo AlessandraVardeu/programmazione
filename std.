@@ -1,7 +1,0 @@
-//scrivi un programma che abbia un segnale elaborato da un filtro che elimini le frequenze superiori 666 Hz
-import("stdfaust.lib");
-fcut=vslider("[01] cut-off [scale:exp][style:knob]", 1000,20,20000,1) ;
-order=128;
-//                       init min max step
-gain=vslider("[02] gain", -20, -96, 0, 0.1) : ba.db2linear ;
-process=fi.lowpass(order,fcut) : fi.highpass(order,fcut) : *(gain) ;
