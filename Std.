@@ -8,8 +8,8 @@ valore massimo
 step=precisione
 order=ordine ;più aumenta l'ordine più il filtro è verticale,più l'ordine abbassa più il filtro è normale.
 gain=regola il volume
-filtro passaalto= fi.highpass
-filtro passabasso=fi.lowpass
+filtro passaalto= fi.highpas(trapezio col triangolo a sinistra)
+filtro passabasso=fi.lowpass(trapezio col triangolo a destra)
 style knob= fa diventare il primo modello di pomello normale ad un pomello circolare
 SCALE EXP= pomello esponenziale
 Per trasfomare un filtro passabasso in un passabanda scrivi inizilamente il filtro passabasso tra parentesi order ,fcut 
@@ -18,10 +18,10 @@ Prima di process va sempre scritto fcut e order
 ogni riga deve terminare con ;
 bug= significa che qualcosa non funziona bene, cioè che le persone ci "camminavano" dentro.
 i filtri sono gli oggeti di base epr la sintesi
-white noise=rumore bianco che ha tutte le frequenze e tutte le ampiezze
+white noise=rumore bianco che ha tutte le frequenze e tutte le ampiezze(rettangolo completamente colorato),rumore banda larga.
 strumento che permette la visione completa delle cose è il microscopio
 analisi di un corpo ossia l'analisi della struttura molecolare
-Nello spettrogramma l'ampiezzza si muove sul dominio della frquenza
+Nello spettrogramma l'ampiezzza si muove sul dominio della frquenza.
 lo spettrogramma è una rappresentazione grafica del suono che si basa su effettive misurazioni del suono in funzione 
 delle variabili.
 Nel sonogramma la frequenza si muove sul dominio del tempo.
