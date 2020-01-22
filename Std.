@@ -11,6 +11,7 @@ gain=regola il volume
 filtro passaalto= fi.highpass
 filtro passabasso=fi.lowpass
 style knob= fa diventare il primo modello di pomello normale ad un pomello circolare
+SCALE EXP= pomello esponenziale
 Per trasfomare un filtro passabasso in un passabanda scrivi inizilamente il filtro passabasso tra parentesi order ,fcut 
 poi due punti pi il filtro passaalto order ,fcut 
 Prima di process va sempre scritto fcut e order
@@ -24,7 +25,8 @@ Nello spettrogramma l'ampiezzza si muove sul dominio della frquenza
 lo spettrogramma è una rappresentazione grafica del suono che si basa su effettive misurazioni del suono in funzione 
 delle variabili.
 Nel sonogramma la frequenza si muove sul dominio del tempo.
-il sonogramma è una registrazione grafica fornita dal fonografo.
+il sonogramma è una registrazione grafica fornita dal sonografo.
+Nella forma d'onda ogni punto è osservabile sul dominio temporale.
 
 //scrivi un programma che abbia un segnale elaborato da un filtro che elimini le frequenze superiori 666 Hz
 import("stdfaust.lib");
