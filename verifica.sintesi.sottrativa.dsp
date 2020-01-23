@@ -10,6 +10,8 @@
 //nel sonogramma la frequenza si muove sul dominio del tempo.
 //l sonogramma è una registrazione grafica fornita dal sonografo.
 //nella forma d'onda ogni punto è osservabile sul dominio temporale., è la rapprsentazione grafica do un segnale, ampiezza e tempo.
+//Prima di process va sempre scritto fcut e order
+//ogni riga deve terminare con ;
 // Elementi:
 //no.noise=rumore
 //fcut=frequenza di taglio 
