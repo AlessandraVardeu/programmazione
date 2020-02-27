@@ -1,0 +1,17 @@
+import("stdfaust.lib");
+bpm2samp(n)= (60*ma.SR)/ (n):int;
+//moltiplichiamo per 60 per capire in 1 miuto quanti campioni abbiamo in totale 
+// numero di secondi per frequenza di campionamento (diviso il numero di rintocchi)
+//ma.SR funzione ci da il numero di campioni in un minuto
+// n:int tutto ciò che sta dentro perde la virgola
+// ciclo main= ciò che sta dentro 
+// campione =unita piu piccola nel nostro sistema audio, la sua dimensione dipende dalla frequenza di campionamento tanto è piccolo quanto è grande la frequenza di campionamento  1920000
+// ba.pulsen= generatore di click a intervalli regolari ha due argomenti: un argoemnto quanto è garnde il click ovvero un campione , il secodno indica ogni quanti acampioni avviene il click lavora sull'unita di misura del campione, 1
+//millisecondi in un ora 1000*60*60n =3600000 
+//bpm2samp=funzione che usa vslider 
+// beat=bpm2samp(vslider("tempo[style.knob]",60,30,344,0.1): /(2) :int; 
+// sub=coefficienti suddivisi 
+beat=bpm2samp((vslider("tempo[style:knob]",60,30,344,0.1))*sub);
+sub=nentry("suddivisione",1,1,4,1);
+metronomo=ba.pulsen(1,beat):fi.lowpass (128,10000) ;
+process=metronomo,metronomo;
