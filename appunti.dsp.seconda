@@ -1,0 +1,7 @@
+import("stdfaust.lib");
+bpm2samp(n)= (60*ma.SR)/ (n):int;
+// numero di secondi per frequenza di campionamento (diviso il numero di rintocchi)
+//ma.SR funzione ci da il numero di campioni in un minuto
+// n:int tutto ciò che sta dentro perde la virgola
+beat=bpm2samp(vslider("tempo[style.knob]",60,30,344,0.1));
+process=ba.pulsen(1,beat):fi.highpass (128,10000) ;
