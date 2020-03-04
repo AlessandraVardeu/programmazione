@@ -1,9 +1,11 @@
 import("stdfaust.lib");
 bpm2samp(n)= (60*ma.SR)/ (n):int;
 //creiamo un metronomo per imparare a capire le operazioni gestorizzate con il computer, la sua impostazione (Bpm) scandisce battuti per minuto
-
-
-
+// SR=44100 sec/min =60 Bpm=88 samp/min= (SR)*sec/min=2646000   samp/Bpm= (samp/min)*sec/min /(Bpm)= 44100*60 /88= 30068.1818181
+//sr=freq di campionemanto
+//tempo sec/ min
+//samp/min= campioni in un minuto 
+//samp/Bpm=
 // numero di secondi per frequenza di cmapionamento diviso numero dei rintocchi
 // S.R= sempor rate= frequenza di campionamento
 // con 60*ms.SR capiamo quanti campioni abbiamo in un minuto 
