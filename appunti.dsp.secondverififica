@@ -4,6 +4,8 @@ bpm2samp(n)= (60*ma.SR)/ (n):int;
 // S.R= sempor rate= frequenza di campionamento
 // con 60*ms.SR capiamo quanti campioni abbiamo in un minuto 
 //:int significa che n deve essere un numero intero perchè se la divisione da un numero decimale , quello con questa funzione diventa una parte intera 
+//style knob= fa diventare il primo modello di pomello normale ad un pomello circolare
+
 //moltiplichiamo per 60 per capire in 1 miuto quanti campioni abbiamo in totale 
 // numero di secondi per frequenza di campionamento (diviso il numero di rintocchi)
 // (60*ma.SR)= numero campioni in un minuto
