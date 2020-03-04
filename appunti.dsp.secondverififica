@@ -1,39 +1,28 @@
 import("stdfaust.lib");
 bpm2samp(n)= (60*ma.SR)/ (n):int;
+// numero di secondi per frequenza di cmapionamento diviso numero dei intocchi
+// S.R= sempor rate= frequenza di campionamento
+// con 60*ms.SR capiamo quanti campioni abbiamo in un minuto 
+//:int significa che n deve essere un numero intero perchè se la divisione da un numero decimale , quello con questa funzione diventa una parte intera 
 //moltiplichiamo per 60 per capire in 1 miuto quanti campioni abbiamo in totale 
 // numero di secondi per frequenza di campionamento (diviso il numero di rintocchi)
+// (60*ma.SR)= numero campioni in un minuto
+// si moltiplica il beat per 2 rallentare il tempo :Bpm2samp((vslider("tempo[style:knob]", 60,30,344,0.1))*2 o si divide per 2 il nuemro di campioni :/(2) si mette alla fine 
 //ma.SR funzione ci da il numero di campioni in un minuto
 // n:int tutto ciò che sta dentro perde la virgola
 // ciclo main= ciò che sta dentro 
 // campione =unita piu piccola nel nostro sistema audio, la sua dimensione dipende dalla frequenza di campionamento tanto è piccolo quanto è grande la frequenza di campionamento  1920000
-// ba.pulsen= generatore di click a intervalli regolari ha due argomenti: un argoemnto quanto è garnde il click ovvero un campione , il secodno indica ogni quanti acampioni avviene il click lavora sull'unita di misura del campione, 1
+// ba.pulsen= generatore di click a intervalli regolari ha due argomenti: un argoemnto quanto è grande  il click ovvero un campione ,in questo caso 1 è il campione, il secondo indica ogni quanti campioni avviene il click lavora sull'unita di misura del campione, 1
 //millisecondi in un ora 1000*60*60n =3600000 
 //bpm2samp=funzione che usa vslider 
 // beat=bpm2samp(vslider("tempo[style.knob]",60,30,344,0.1): /(2) :int; 
-// sub=coefficienti suddivisi 
-beat=bpm2samp((vslider("tempo[style:knob]",60,30,344,0.1))*sub);
-sub=nentry("suddivisione",1,1,4,1);
-metronomo=ba.pulsen(1,beat):fi.lowpass (128,10000) ;
-process=metronomo,metronomo;
-mport("stdfaust.lib");
-bpm2samp(n)= (60*ma.SR)/ (n):int;
-// PROBlEMA: ad una frequenza di campionamento di 960000 Hz e Bpm 42 scopri qual'è la diotanza in campioni tra un beat e il successivo
+// sub=coefficienti suddivisi, rappreseta la suddivisione valore secondo valore minimo il terzo valore massimo di suddivisione
+// PROBlEMA: ad una frequenza di campionamento di 960000 Hz e Bpm 42 scopri qual'è la distanza in campioni tra un beat e il successivo
 // ma.SR=960000 Hz Bpm=42
 // 960000*60 /42=
-// a quanti Bpm va un metronomo scandito ogni 100000 campioni a  ferquenza di campionakmento 480000 
+//PROBLEMA: a quanti Bpm va un metronomo scandito ogni 100000 campioni a  ferquenza di campionamento 480000 ?
 // a frequenza di cxampionamento 
 // 1000000*60 / 100000= 28,8 Bpm
-//moltiplichiamo per 60 per capire in 1 miuto quanti campioni abbiamo in totale 
-// numero di secondi per frequenza di campionamento (diviso il numero di rintocchi)
-//ma.SR funzione ci da il numero di campioni in un minuto
-// n:int tutto ciò che sta dentro perde la virgola
-// ciclo main= ciò che sta dentro 
-// campione =unita piu piccola nel nostro sistema audio, la sua dimensione dipende dalla frequenza di campionamento tanto è piccolo quanto è grande la frequenza di campionamento  1920000
-// ba.pulsen= generatore di click a intervalli regolari ha due argomenti: un argoemnto quanto è garnde il click ovvero un campione , il secodno indica ogni quanti acampioni avviene il click lavora sull'unita di misura del campione, 1
-//millisecondi in un ora 1000*60*60n =3600000 
-//bpm2samp=funzione che usa vslider 
-// beat=bpm2samp(vslider("tempo[style.knob]",60,30,344,0.1): /(2) :int; 
-// sub=coefficienti suddivisi 
 beat=bpm2samp((vslider("tempo[style:knob]",60,30,344,0.1))*sub);
 sub=nentry("suddivisione",1,1,4,1);
 metronomo=ba.pulsen(1,beat):fi.lowpass (128,10000) ;
