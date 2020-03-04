@@ -1,16 +1,25 @@
 import("stdfaust.lib");
 bpm2samp(n)= (60*ma.SR)/ (n):int;
-// numero di secondi per frequenza di cmapionamento diviso numero dei intocchi
+//creiamo un metronomo per imparare a capire le operazioni gestorizzate con il computer, la sua impostazione (Bpm) scandisce battuti per minuto
+
+
+
+// numero di secondi per frequenza di cmapionamento diviso numero dei rintocchi
 // S.R= sempor rate= frequenza di campionamento
 // con 60*ms.SR capiamo quanti campioni abbiamo in un minuto 
 //:int significa che n deve essere un numero intero perchè se la divisione da un numero decimale , quello con questa funzione diventa una parte intera 
 //style knob= fa diventare il primo modello di pomello normale ad un pomello circolare
-
+//vslider= primo modello di pomello 
+//i valori numerici di vlisder sono:
+//valore di inizializzaione
+//alore minimo 
+//valore massimo
+//step=precisione
 //moltiplichiamo per 60 per capire in 1 miuto quanti campioni abbiamo in totale 
 // numero di secondi per frequenza di campionamento (diviso il numero di rintocchi)
 // (60*ma.SR)= numero campioni in un minuto
 // si moltiplica il beat per 2 rallentare il tempo :Bpm2samp((vslider("tempo[style:knob]", 60,30,344,0.1))*2 o si divide per 2 il nuemro di campioni :/(2) si mette alla fine 
-//ma.SR funzione ci da il numero di campioni in un minuto
+//ma.SR funzione ci da il numero di campioni in un minuto, è un numero fisso
 // n:int tutto ciò che sta dentro perde la virgola
 // ciclo main= ciò che sta dentro 
 // campione =unita piu piccola nel nostro sistema audio, la sua dimensione dipende dalla frequenza di campionamento tanto è piccolo quanto è grande la frequenza di campionamento  1920000
